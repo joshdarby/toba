@@ -5,12 +5,20 @@
  */
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class LoginServlet extends HttpServlet {
+/**
+ *
+ * @author josh
+ */
+
+public class PasswordReset extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -18,23 +26,21 @@ public class LoginServlet extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
+     * 
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-        String success = "/toba/Account_activity.jsp";
-        String fail = "/toba/Login_failure.html";
-        
-        String email = request.getParameter("email");
-        String pass = request.getParameter("password");
-        
-        if ("jsmith@toba.com".equals(email) && "letmein".equals(pass)) {
-            response.sendRedirect(success);
-        } else {
-            response.sendRedirect(fail);
+            //get user in the session
+            HttpSession session = request.getSession();
+            User user = (User) session.getAttribute("user");
+            String password = request.getParameter("password");
+            user.setPassword(password);
+            session.setAttribute("user", user);
+            String redirect = "/toba/Account_activity.jsp";
+            response.sendRedirect(redirect);
         }
     }
 
-}
+

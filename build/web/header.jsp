@@ -1,9 +1,11 @@
+<%-- 
+    Document   : header
+    Created on : Apr 10, 2017, 9:02:07 PM
+    Author     : Josh
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>TOBA</title>
@@ -25,22 +27,11 @@ and open the template in the editor.
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                   <ul class="nav navbar-nav">
-                    <li class="active"><a href="/toba/index.html">Home</a></li>
-                    <li><a href="/toba/login.html">Login</a></li>
+                    <li><a href="/toba/index.jsp">Home</a></li>
+                    <li><a href="/toba/login.jsp">Login</a></li>
+                    <li><a href="/toba/Account_activity.jsp">Account Activity</a></li>
+                    <li><a href="/toba/transaction.jsp">Transaction</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
               </div>
           </nav>
-
-      <div class="container">
-
-        <div class="starter-template" style="padding-top:100px;">
-          <h1>Titan Online Banking Application</h1>
-          <p class="lead">The best bank in the world!</p>
-        </div>
-
-      </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </body>
-</html>

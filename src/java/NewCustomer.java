@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class NewCustomer extends HttpServlet {
 
@@ -34,12 +35,27 @@ public class NewCustomer extends HttpServlet {
         String email = request.getParameter("email");
         String message;
         String url;
+        User user = new User();
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setEmail(email);
+        user.setPhone(phone);
+        user.setAddress(address);
+        user.setCity(city);
+        user.setState(state);
+        user.setZip(zip);
+        user.setUserName(lastName + zip);
+        user.setPassword("welcome1");
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("user", user);
+        
         if (email == null || email.isEmpty() || firstName == null || lastName == null || phone == null || address == null || city == null || state == null || zip == null || firstName.isEmpty() || lastName.isEmpty() || phone.isEmpty() || address.isEmpty() || city.isEmpty() || state.isEmpty() || zip.isEmpty()) {
             message = "Please make sure all fields are filled out.";
             url = "/New_customer.jsp";
         } else {
             message = "";
-            url = "/success.html";
+            url = "/success.jsp";
         }
         request.setAttribute("message", message);
         getServletContext().getRequestDispatcher(url).forward(request, response);
