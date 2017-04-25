@@ -20,7 +20,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <%@ include file="header.jsp" %>
+        <%@ include file="includes/header.jsp" %>
 
       <div class="container">
 
@@ -30,4 +30,4 @@ and open the template in the editor.
         </div>
 
       </div>
-       <%@ include file="footer.jsp" %>
+       <%@ include file="includes/footer.jsp" %>

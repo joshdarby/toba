@@ -20,7 +20,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
-      <%@ include file="header.jsp" %>
+      <%@ include file="includes/header.jsp" %>
       <div class="container">
          <div class="starter-template" style="padding-top:100px;">
             <h1>Login</h1>
@@ -30,7 +30,7 @@
                   <form action="LoginServlet" method="post">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Username</label>
-                        <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="text" class="form-control" id="userName" name="userName" aria-describedby="emailHelp" placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your information with anyone else.</small>
                      </div>
                      <div class="form-group">
@@ -49,4 +49,4 @@
             </div>
          </div>
       </div>
-      <%@ include file="footer.jsp" %>
+      <%@ include file="includes/footer.jsp" %>

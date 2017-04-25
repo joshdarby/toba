@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
+        <description>Servlet for allowing a user to login</description>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>LoginServlet</servlet-class>
+        <servlet-class>businessRules.LoginServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>NewCustomer</servlet-name>
-        <servlet-class>NewCustomer</servlet-class>
+        <description>Allow a new customer to register</description>
+        <servlet-name>NewCustomerServlet</servlet-name>
+        <servlet-class>businessRules.NewCustomerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ResetPasswordServlet</servlet-name>
+        <servlet-class>businessRules.ResetPasswordServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TransactionServlet</servlet-name>
-        <servlet-class>TransactionServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PasswordReset</servlet-name>
-        <servlet-class>PasswordReset</servlet-class>
+        <servlet-class>businessRules.TransactionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>NewCustomer</servlet-name>
-        <url-pattern>/NewCustomer</url-pattern>
+        <servlet-name>NewCustomerServlet</servlet-name>
+        <url-pattern>/NewCustomerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResetPasswordServlet</servlet-name>
+        <url-pattern>/ResetPasswordServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TransactionServlet</servlet-name>
         <url-pattern>/TransactionServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PasswordReset</servlet-name>
-        <url-pattern>/PasswordReset</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -39,10 +41,10 @@
     </session-config>
     <error-page>
         <error-code>404</error-code>
-        <location>/Error_404.jsp</location>
+        <location>/error_404.jsp</location>
     </error-page>
     <error-page>
         <exception-type>java.lang.Throwable</exception-type>
-        <location>/Error_java.jsp</location>
+        <location>/error_java.jsp</location>
     </error-page>
 </web-app>

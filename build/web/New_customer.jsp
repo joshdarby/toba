@@ -14,7 +14,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
-        <%@ include file="header.jsp" %>
+        <%@ include file="includes/header.jsp" %>
       <div class="container">
          <div class="starter-template" style="padding-top:100px;">
             <h1>Login</h1>
@@ -22,7 +22,7 @@
                <div class="col-lg-6">
                   <h3>New User Sign Up</h3>
                   <p class="text-danger">${message}</p>
-                  <form action="NewCustomer" method="post">
+                  <form action="NewCustomerServlet" method="post">
                      <div class="form-group">
                         <label>First Name</label>
                         <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter first name">
@@ -49,7 +49,7 @@
                      </div>
                      <div class="form-group">
                         <label>Zip Code</label>
-                        <input type="number" id="zip" name="zip" class="form-control" placeholder="Enter zip code">
+                        <input type="number" id="zipCode" name="zipCode" class="form-control" placeholder="Enter zip code">
                      </div>
                      <div class="form-group">
                         <label>Email</label>
@@ -62,4 +62,4 @@
             </div>
          </div>
       </div>
-        <%@ include file="footer.jsp" %>
+        <%@ include file="includes/footer.jsp" %>

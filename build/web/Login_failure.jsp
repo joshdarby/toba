@@ -20,7 +20,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
-        <%@ include file="header.jsp" %>
+        <%@ include file="includes/header.jsp" %>
       <div class="container">
          <div class="starter-template" style="padding-top:100px;">
             <h1>Login Failed</h1>
@@ -33,4 +33,4 @@
             </div>
          </div>
       </div>
-        <%@ include file="footer.jsp" %>
+        <%@ include file="includes/footer.jsp" %>
